@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$primaryColorOne: #df1c1d;
+$primaryColorTwo: #f8f8f8;
+
+body {
+  //background image will be the small pokeball
+  font-family: poppins, sans-serif;
+  background-image: url("./img/pokeball.png");
+  background-repeat: 0 0;
+  background-color: $primaryColorTwo;
+  display: flex;
+  animation: slide 20s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 350px -400px;
+  }
+}
+
+#mainDisplay {
+  //the background color and pokeball will be set by javascript
+  width: 50vw;
+  height: 100vh;
+  .bigPokeball {
+    width: 50vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(./img/bigPokeball.png);
+    animation: pokeballSpin 15s linear infinite;
+  }
+  .pokemonInfo {
+    position: absolute;
+    z-index: 1;
+    width: 50vw;
+    height: 100vh;
+    color: $primaryColorTwo;
+    text-transform: capitalize;
+    #typeWeightDetails {
+      display: flex;
+    }
+  }
+}
+
+@keyframes pokeballSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media all and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+
+  #mainDisplay {
+    width: 100vw;
+    height: 75vh;
+    .bigPokeball {
+      width: 100vw;
+      height: 75vh;
+      background-size: contain;
+      background-position: center;
+    }
+    .pokemonInfo {
+      width: 100vw;
+      height: 75vh;
+    }
+  }
+}
