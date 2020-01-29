@@ -14,6 +14,7 @@ body {
   -webkit-animation: slide 20s linear infinite;
           animation: slide 20s linear infinite;
   overflow: hidden;
+  font-size: 1.2em;
 }
 
 @-webkit-keyframes slide {
@@ -50,19 +51,140 @@ body {
           animation: pokeballSpin 15s linear infinite;
 }
 
-#mainDisplay .pokemonInfo {
+#mainInfo {
   position: absolute;
   z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mainInfo #lightData {
+  width: 50vw;
+}
+
+#mainInfo #lightData .pokemonInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50vw;
   height: 100vh;
   color: #f8f8f8;
   text-transform: capitalize;
 }
 
-#mainDisplay .pokemonInfo #typeWeightDetails {
+#mainInfo #lightData .pokemonInfo #pokemonImage {
+  width: 60%;
+}
+
+#mainInfo #lightData .pokemonInfo #typeWeightDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+#mainInfo #lightData .pokemonInfo #typeWeightDetails #height,
+#mainInfo #lightData .pokemonInfo #typeWeightDetails #weight {
+  text-transform: lowercase;
+}
+
+#mainInfo #mainData {
+  width: 50vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mainInfo #mainData #stats {
+  list-style-type: none;
+}
+
+#mainInfo #mainData #abilities {
+  text-transform: capitalize;
+}
+
+#mainInfo #mainData #nav {
+  width: 100%;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mainInfo #mainData #nav .btns {
+  width: 35%;
+  height: 180%;
+  background-color: #df1c1d;
+  color: #f8f8f8;
+  font-family: poppins, sans-serif;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+#mainInfo #mainData #nav #prevNextBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mainInfo #mainData #nav #searchPokemon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+#mainInfo #mainData #nav #searchPokemon #searchInput {
+  height: 180%;
+  width: 50%;
+  font-family: poppins, sans-serif;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#mainInfo #mainData #nav #searchPokemon #searchInput:focus {
+  border: 1px solid #df1c1d;
 }
 
 @-webkit-keyframes pokeballSpin {
@@ -96,7 +218,7 @@ body {
   }
   #mainDisplay {
     width: 100vw;
-    height: 75vh;
+    height: 80vh;
   }
   #mainDisplay .bigPokeball {
     width: 100vw;
@@ -104,9 +226,38 @@ body {
     background-size: contain;
     background-position: center;
   }
-  #mainDisplay .pokemonInfo {
+  #mainInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #mainInfo #lightData {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50vh;
     width: 100vw;
-    height: 75vh;
+    font-size: 0.75em;
+  }
+  #mainInfo #mainData {
+    width: 100vw;
+    height: 50vh;
+    color: #f8f8f8;
+    font-size: 0.75em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>PokeDex</title>
-    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./styles/style.css">
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
@@ -13,40 +13,43 @@
   </head>
   <body>
     <div id="mainDisplay">
-      <!--Will contain the image and light pokemon info-->
-      <div class="pokemonInfo">
-        <h1 id="pokemonName"></h1>
-        <img alt="Pokemon-Image" id="pokemonImage" />
-        <div id="typeWeightDetails">
-          <p id="type"></p>
-          <p id="weight"></p>
-          <p id="height"></p>
-        </div>
-      </div>
       <div class="bigPokeball">
         <!--big rotating pokeball background nothing else-->
       </div>
     </div>
-    <div class="mainInfo">
-      <!--Will contain the main pokemon stats and nav buttons-->
-      <div id="baseStats">
-        <p>Base stats</p>
-        <ul id="stats"></ul>
+    <div id="mainInfo">
+      <!--Use z-index to place info over the main display-->
+      <div id="lightData">
+        <div class="pokemonInfo">
+          <h1 id="pokemonName"></h1>
+          <img alt="Pokemon-Image" id="pokemonImage" />
+          <div id="typeWeightDetails">
+            <p id="type"></p>
+            <p id="weight"></p>
+            <p id="height"></p>
+          </div>
+        </div>
       </div>
-      <p id="abilities"></p>
-      <div class="nav">
-        <div class="searchPokemon">
-          <input
-            class="searchInput"
-            type="text"
-            placeholder="Pokemon Name or Id"
-          />
-          <button class="searchBtn">Search</button>
-        </div>
-        <div class="leftRight">
-          <button class="previous">Previous</button>
-          <button class="next">Next</button>
-        </div>
+      <div id="mainData">
+        <div id="baseStats">
+            <p>Base stats</p>
+            <ul id="stats"></ul>
+          </div>
+        <p id="abilities">Abilities:</p>
+        <div id="nav">
+            <div id="searchPokemon">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Pokemon Name or Id"
+              />
+              <button class="btns" id="searchBtn">Search</button class="btns">
+            </div>
+            <div id="prevNextBtn">
+              <button class="btns" id="previous">Previous</button>
+              <button class="btns" id="next">Next</button>
+            </div>
+         </div>
       </div>
     </div>
     <script src="app.js"></script>

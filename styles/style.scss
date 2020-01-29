@@ -15,6 +15,7 @@ body {
   display: flex;
   animation: slide 20s linear infinite;
   overflow: hidden;
+  font-size: 1.2em;
 }
 
 @keyframes slide {
@@ -39,15 +40,89 @@ body {
     background-image: url(./img/bigPokeball.png);
     animation: pokeballSpin 15s linear infinite;
   }
-  .pokemonInfo {
-    position: absolute;
-    z-index: 1;
+}
+
+#mainInfo {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  #lightData {
+    width: 50vw;
+    .pokemonInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50vw;
+      height: 100vh;
+      color: $primaryColorTwo;
+      text-transform: capitalize;
+      #pokemonImage {
+        width: 60%;
+      }
+      #typeWeightDetails {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        #height,
+        #weight {
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+  #mainData {
     width: 50vw;
     height: 100vh;
-    color: $primaryColorTwo;
-    text-transform: capitalize;
-    #typeWeightDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    #stats {
+      list-style-type: none;
+    }
+    #abilities {
+      text-transform: capitalize;
+    }
+    #nav {
+      width: 100%;
+      height: 20vh;
       display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .btns {
+        width: 35%;
+        height: 180%;
+        background-color: $primaryColorOne;
+        color: $primaryColorTwo;
+        font-family: poppins, sans-serif;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+      }
+      #prevNextBtn {
+        display: flex;
+        justify-content: space-around;
+      }
+      #searchPokemon {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        #searchInput {
+          height: 180%;
+          width: 50%;
+          font-family: poppins, sans-serif;
+          border-radius: 5px;
+          border: 1px solid black;
+          &:focus {
+            border: 1px solid $primaryColorOne;
+          }
+        }
+      }
     }
   }
 }
@@ -68,16 +143,32 @@ body {
 
   #mainDisplay {
     width: 100vw;
-    height: 75vh;
+    height: 80vh;
     .bigPokeball {
       width: 100vw;
       height: 75vh;
       background-size: contain;
       background-position: center;
     }
-    .pokemonInfo {
+  }
+
+  #mainInfo {
+    flex-direction: column;
+    #lightData {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 50vh;
       width: 100vw;
-      height: 75vh;
+      font-size: 0.75em;
+    }
+    #mainData {
+      width: 100vw;
+      height: 50vh;
+      color: $primaryColorTwo;
+      font-size: 0.75em;
+      justify-content: flex-start;
     }
   }
 }

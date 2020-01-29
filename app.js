@@ -63,7 +63,9 @@ const setUpPokemon = pokemon => {
     <li>Speed: ${pokemon.stats[0]}</li>
     `;
   stats.innerHTML = pokeStats;
-  abilities.innerHTML = pokemon.abilities.join(", ");
+  abilities.appendChild(
+    document.createTextNode(` ${pokemon.abilities.join(", ")}`)
+  );
 };
 
 fetchPokemon();
