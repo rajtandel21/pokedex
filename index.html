@@ -23,19 +23,28 @@
         <div class="pokemonInfo">
           <h1 id="pokemonName"></h1>
           <img alt="Pokemon-Image" id="pokemonImage" />
-          <div id="typeWeightDetails">
-            <p id="type"></p>
-            <p id="weight"></p>
-            <p id="height"></p>
+          <div class="typeWeightDetails" id="typeWeightDetailsOne">
+            <p class="type"></p>
+            <p class="weight"></p>
+            <p class="height"></p>
           </div>
         </div>
       </div>
       <div id="mainData">
-        <div id="baseStats">
+        <div class="dataStructure">
+          <div class="typeWeightDetails">
+            <p class="type"></p>
+            <p class="weight"></p>
+            <p class="height"></p>
+            <p class="abilities" id="abilitiesSmallView">Abilities:</p>
+          </div>
+          <div id="baseStats">
             <p>Base stats</p>
             <ul id="stats"></ul>
           </div>
-        <p id="abilities">Abilities:</p>
+        </div>
+        
+        <p class="abilities" id="abilitiesBigView">Abilities:</p>
         <div id="nav">
             <div id="searchPokemon">
               <input

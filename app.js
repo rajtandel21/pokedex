@@ -1,10 +1,10 @@
 const pokemonName = document.getElementById("pokemonName");
 const pokemonImage = document.getElementById("pokemonImage");
 const stats = document.getElementById("stats");
-const abilities = document.getElementById("abilities");
-const weight = document.getElementById("weight");
-const height = document.getElementById("height");
-const type = document.getElementById("type");
+const abilities = document.getElementsByClassName("abilities");
+const weight = document.getElementsByClassName("weight");
+const height = document.getElementsByClassName("height");
+const type = document.getElementsByClassName("type");
 const mainDisplay = document.getElementById("mainDisplay");
 
 //object for pokemon type and what color to use for background
@@ -51,9 +51,13 @@ const setUpPokemon = pokemon => {
   mainDisplay.style.backgroundColor = `${colorSelect}`;
   pokemonImage.src = pokemon.image;
   pokemonName.innerHTML = `${pokemon.name} #${pokemon.id}`;
-  weight.innerHTML = `${pokemon.weight / 10} kg`;
-  height.innerHTML = `${pokemon.height * 10} cm`;
-  type.innerHTML = pokemon.type.join(", ");
+  //Details display change depending on media query
+  weight[0].innerHTML = `Weight: ${pokemon.weight / 10} kg`;
+  weight[1].innerHTML = `Weight: ${pokemon.weight / 10} kg`;
+  height[0].innerHTML = `Height: ${pokemon.height * 10} cm`;
+  height[1].innerHTML = `Height: ${pokemon.height * 10} cm`;
+  type[0].innerHTML = `Type: ${pokemon.type.join(", ")}`;
+  type[1].innerHTML = `Type: ${pokemon.type.join(", ")}`;
   const pokeStats = `
     <li>HP: ${pokemon.stats[5]}</li>
     <li>Attack: ${pokemon.stats[4]}</li>
@@ -63,7 +67,10 @@ const setUpPokemon = pokemon => {
     <li>Speed: ${pokemon.stats[0]}</li>
     `;
   stats.innerHTML = pokeStats;
-  abilities.appendChild(
+  abilities[0].appendChild(
+    document.createTextNode(` ${pokemon.abilities.join(", ")}`)
+  );
+  abilities[1].appendChild(
     document.createTextNode(` ${pokemon.abilities.join(", ")}`)
   );
 };

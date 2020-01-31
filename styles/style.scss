@@ -64,18 +64,21 @@ body {
       #pokemonImage {
         width: 60%;
       }
-      #typeWeightDetails {
+      .typeWeightDetails {
         display: flex;
         justify-content: space-around;
         width: 100%;
-        #height,
-        #weight {
+        .height,
+        .weight {
           text-transform: lowercase;
         }
       }
     }
   }
   #mainData {
+    .typeWeightDetails {
+      display: none;
+    }
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -85,7 +88,7 @@ body {
     #stats {
       list-style-type: none;
     }
-    #abilities {
+    .abilities {
       text-transform: capitalize;
     }
     #nav {
@@ -146,7 +149,7 @@ body {
     height: 80vh;
     .bigPokeball {
       width: 100vw;
-      height: 75vh;
+      height: 50vh;
       background-size: contain;
       background-position: center;
     }
@@ -159,16 +162,43 @@ body {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: 50vh;
+      height: 40vh;
       width: 100vw;
       font-size: 0.75em;
+      #typeWeightDetailsOne {
+        display: none;
+      }
     }
     #mainData {
       width: 100vw;
-      height: 50vh;
+      height: 60vh;
       color: $primaryColorTwo;
-      font-size: 0.75em;
-      justify-content: flex-start;
+      font-size: 0.8em;
+      justify-content: space-around;
+      .dataStructure {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        height: 33vh;
+        .typeWeightDetails {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .height,
+          .weight {
+            text-transform: lowercase;
+          }
+        }
+        #baseStats {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+        }
+      }
+      #abilitiesBigView {
+        display: none;
+      }
     }
   }
 }

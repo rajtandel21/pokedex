@@ -94,7 +94,7 @@ body {
   width: 60%;
 }
 
-#mainInfo #lightData .pokemonInfo #typeWeightDetails {
+#mainInfo #lightData .pokemonInfo .typeWeightDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,8 +103,8 @@ body {
   width: 100%;
 }
 
-#mainInfo #lightData .pokemonInfo #typeWeightDetails #height,
-#mainInfo #lightData .pokemonInfo #typeWeightDetails #weight {
+#mainInfo #lightData .pokemonInfo .typeWeightDetails .height,
+#mainInfo #lightData .pokemonInfo .typeWeightDetails .weight {
   text-transform: lowercase;
 }
 
@@ -125,11 +125,15 @@ body {
           align-items: center;
 }
 
+#mainInfo #mainData .typeWeightDetails {
+  display: none;
+}
+
 #mainInfo #mainData #stats {
   list-style-type: none;
 }
 
-#mainInfo #mainData #abilities {
+#mainInfo #mainData .abilities {
   text-transform: capitalize;
 }
 
@@ -222,7 +226,7 @@ body {
   }
   #mainDisplay .bigPokeball {
     width: 100vw;
-    height: 75vh;
+    height: 50vh;
     background-size: contain;
     background-position: center;
   }
@@ -246,18 +250,61 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
     font-size: 0.75em;
   }
+  #mainInfo #lightData #typeWeightDetailsOne {
+    display: none;
+  }
   #mainInfo #mainData {
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
     color: #f8f8f8;
-    font-size: 0.75em;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    font-size: 0.8em;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #mainInfo #mainData .dataStructure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100vw;
+    height: 33vh;
+  }
+  #mainInfo #mainData .dataStructure .typeWeightDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #mainInfo #mainData .dataStructure .typeWeightDetails .height,
+  #mainInfo #mainData .dataStructure .typeWeightDetails .weight {
+    text-transform: lowercase;
+  }
+  #mainInfo #mainData .dataStructure #baseStats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #mainInfo #mainData #abilitiesBigView {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
