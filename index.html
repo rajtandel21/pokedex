@@ -12,6 +12,15 @@
     />
   </head>
   <body>
+    <!--Landing page looks like pokeball and will open on click-->
+    <div id="clickPokeball">
+      <div id="top">
+        <div class="outerRing">
+          <div id="openBtn"></div>
+        </div>
+      </div>
+      <div id="bottom"></div>
+    </div>
     <div id="mainDisplay">
       <div class="bigPokeball">
         <!--big rotating pokeball background nothing else-->
@@ -36,15 +45,22 @@
             <p class="type"></p>
             <p class="weight"></p>
             <p class="height"></p>
-            <p class="abilities" id="abilitiesSmallView">Abilities:</p>
+            <p class="abilities" id="abilitiesSmallView"></p>
           </div>
           <div id="baseStats">
             <p>Base stats</p>
-            <ul id="stats"></ul>
+            <ul id="stats">
+              <li>HP: </li>
+              <li>Attack: </li>
+              <li>Sp Attach: </li>
+              <li>Defence: </li>
+              <li>Sp Defence: </li>
+              <li>Speed: </li>
+            </ul>
           </div>
         </div>
         
-        <p class="abilities" id="abilitiesBigView">Abilities:</p>
+        <p class="abilities" id="abilitiesBigView"></p>
         <div id="nav">
             <div id="searchPokemon">
               <input
