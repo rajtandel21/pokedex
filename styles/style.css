@@ -60,7 +60,6 @@ body {
 }
 
 #clickPokeball {
-  display: none;
   position: absolute;
   z-index: 10;
   width: 100vw;
@@ -354,6 +353,10 @@ body {
     height: 40vh;
     width: 100vw;
     font-size: 0.75em;
+  }
+  #mainInfo #lightData .pokemonInfo {
+    height: 100vh;
+    width: 100vw;
   }
   #mainInfo #lightData #typeWeightDetailsOne {
     display: none;

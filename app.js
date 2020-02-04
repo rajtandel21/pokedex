@@ -54,11 +54,10 @@ let currentPokemon = 1;
 
 //fetch pokemon with id 1 as default and display its details
 const fetchPokemon = findPokemon => {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${findPokemon}`)
-    .then(res => res.json())
-    .then(data => {
-      if (data !== null) {
-        console.log(data);
+  fetch(`https://pokeapi.co/api/v2/pokemon/${findPokemon}`).then(res => {
+    const contentType = res.headers.get("content-type");
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+      return res.json().then(data => {
         let pokemon = {
           name: data.name,
           id: data.id,
@@ -76,10 +75,12 @@ const fetchPokemon = findPokemon => {
           })
         };
         setUpPokemon(pokemon);
-      } else {
-        searchInput.placeholder = "Cannot find Pokemon. Try again";
-      }
-    });
+        searchInput.placeholder = "Enter Pokemon name or Id";
+      });
+    } else {
+      searchInput.placeholder = "Cannot find Pokemon. Try again";
+    }
+  });
 };
 
 const setUpPokemon = pokemon => {
@@ -132,8 +133,12 @@ searchBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-  currentPokemon++;
-  fetchPokemon(currentPokemon);
+  if (currentPokemon >= 807) {
+    fetchPokemon(currentPokemon);
+  } else {
+    currentPokemon++;
+    fetchPokemon(currentPokemon);
+  }
 });
 
 previousBtn.addEventListener("click", () => {
