@@ -1,5 +1,7 @@
 # Pokedex
 
+Click [link](https://relaxed-dijkstra-b481b5.netlify.com) to visit website
+
 Enter the pokemon name or id and search.
 The pokedex will then display the data for that pokemon.
 
